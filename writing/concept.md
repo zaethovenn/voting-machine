@@ -1,6 +1,6 @@
 # Informative Title for the Project
 
-## Kai'lani Woodard, 
+## Kai'lani Woodard, Robert McMaster
 
 ## Description of the Concept
 
