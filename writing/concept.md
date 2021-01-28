@@ -22,4 +22,6 @@ In order to complete this project, the following tasks will need to be completed
 
 ## Timeline to Complete the Project
 
-
+- Feb 1st: Have final stucture of project set
+- Feb 5th: Complete blockchain data structure
+- Feb 8th: Implemented user interaction side of program
