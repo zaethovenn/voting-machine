@@ -1,4 +1,4 @@
-# Report by Kai'lani Woodard, 
+# Report by Kai'lani Woodard, zackery devers
 
 ## Introduction and Motivation
 
