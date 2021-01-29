@@ -108,6 +108,8 @@ public class Block implements Serializable {
     return blockHash;
   }
 
+  /** Method to override already existing toString() method.
+  */
   @Override
   public String toString() {
     return "Voter ID: " + vote.voterID + "\nVoter Name: " + vote.voterName + "\Voted for Party: " + vote.voteParty;
