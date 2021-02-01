@@ -67,7 +67,7 @@ public class Main {
         }
 
         System.out.println("Enter your vote: ");
-        voteParty = sc.nextInt();
+        voteParty = sc.nextLine();
         Block vote = new Block(prevHash, voterID, voterName, voteParty);
 
         if (checkValidity(vote)) {
