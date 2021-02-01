@@ -45,9 +45,9 @@ public class Main {
     candidates.add("two");
     candidates.add("three");
 
-    String voterID = null;
-    String voterName = null;
-    int voteParty = null;
+    String voterID = "";
+    String voterName = "";
+    String voteParty = "";
     int prevHash = 0;
 
     // Starting structures of accesible menu
