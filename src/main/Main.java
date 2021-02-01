@@ -23,20 +23,28 @@ import static java.lang.System.lineSeparator;
  */
 public class Main {
   public static void main(String[] args) {
-    // Display menu for user to
+    // Display menu for user to view their options
     System.out.println(" **** MAIN MENU ****");
     System.out.println("1. Cast Votes");
     System.out.println("2. View Votes on Blockchain");
     System.out.println("3. Count Votes");
     System.out.println("0. Exit Program");
+
     // 4 total options
     Scanner sc = new Scanner(System.in);
 
-    // print out empty space for users input
+    // print out empty spaace for users input
 
     System.out.println("********************");
     System.out.println("Please input your choice: ");
-    int input = sc.nextInt();
+    char action = Character.toUpperCase(sc.next().charAt(0));
+
+    // Starting structures of accesible menu
+    do {
+      if (action == 0) {
+        break;
+      }
+    } while (true)
     }
   }
 }
