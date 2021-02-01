@@ -40,7 +40,7 @@ public class Main {
 
     HashSet<String> hashVotes = new HashSet<>();
     ArrayList<SealedObject> blockList = new ArrayList<>();
-    genesisBlock = new Block(0, "", "", "");
+    Block genesisBlock = new Block(0, "", "", "");
     blockList.add(encrypt(genesisBlock));
 
     // Candidates ArrayList for potential candidates to vote for
