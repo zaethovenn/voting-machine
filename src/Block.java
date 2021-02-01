@@ -5,7 +5,7 @@ public class Block implements Serializable {
   /** Inner class to implement Voting mechanism.
   */
   public class Vote implements Serializable {
-    private String votedID;
+    private String voterID;
     private String voterName;
     private String voteParty;
 
@@ -14,12 +14,12 @@ public class Block implements Serializable {
     public Vote(String vi, String vn, String vp) {
       voterName = vn;
       voterID = vi;
-      voterParty = vp;
+      voteParty = vp;
     }
 
     /** Mutator method for setting voter ID.
     */
-    public String setVoterID(String vi) {
+    public void setVoterID(String vi) {
       voterID = vi;
     }
 
@@ -31,7 +31,7 @@ public class Block implements Serializable {
 
     /** Mutator method for setting voter name.
     */
-    public String setVoterName(String vn) {
+    public void setVoterName(String vn) {
       voterName = vn;
     }
 
@@ -43,7 +43,7 @@ public class Block implements Serializable {
 
     /** Mutator method for setting vote party.
     */
-    public String setVoteParty(String vp) {
+    public void setVoteParty(String vp) {
       voteParty = vp;
     }
 
