@@ -29,8 +29,10 @@ public class Main {
     System.out.println("2. View Votes on Blockchain");
     System.out.println("3. Count Votes");
     System.out.println("0. Exit Program");
-
+    // 4 total options
     Scanner sc = new Scanner(System.in);
+
+    // print out empty space for users input
 
     System.out.println("********************");
     System.out.println("Please input your choice: ");
