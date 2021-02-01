@@ -78,7 +78,12 @@ public class Main {
         if (checkValidity(vote, hashVotes)) {
           hashVotes.add(voterID);
           prevHash = vote.getBlockHash();
-          blockList.add(encrypt(vote));
+          try {
+            blockList.add(encrypt(vote));
+          } catch (Exception e) {
+            System.out.println("Exception error.");
+          }
+
         } else {
           System.out.println("Vote invalid!");
         }
@@ -86,7 +91,18 @@ public class Main {
         System.out.println("**** Displaying Votes ****");
 
         for (int i = 1; i < blockList.size(); i++) {
-          System.out.println(decrypt(blockList.get(i)));
+          try {
+            System.out.println(decrypt(blockList.get(i)));
+          } catch (IOException e) {
+            System.out.println("IOException error.");
+          } catch (NoSuchAlgorithmException a) {
+            System.out.println("NoSuchAlgorithmException error.");
+          } catch (NoSuchPaddingException p) {
+            System.out.println("NoSuchPaddingException error.");
+          }  catch (InvalidKeyException k) {
+            System.out.println("InvalidKeyException error.");
+          }
+
         }
 
         System.out.println("**************************");
