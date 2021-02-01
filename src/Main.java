@@ -37,7 +37,12 @@ public class Main {
     HashSet<String> hashVotes = new HashSet<>();
     ArrayList<SealedObject> blockList = new ArrayList<>();
     Block genesisBlock = new Block(0, "", "", "");
+    try{
     blockList.add(encrypt(genesisBlock));
+    }
+    catch(Exception e){
+      System.out.println("error");
+    }
 
     // Candidates ArrayList for potential candidates to vote for
     ArrayList<String> candidates = new ArrayList<>();
