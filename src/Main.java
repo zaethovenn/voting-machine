@@ -70,7 +70,7 @@ public class Main {
         voteParty = sc.nextLine();
         Block vote = new Block(prevHash, voterID, voterName, voteParty);
 
-        if (checkValidity(vote)) {
+        if (checkValidity(vote, hashVotes)) {
           hashVotes.add(voterID);
           prevHash = vote.getBlockHash();
           blockList.add(encrypt(vote));
@@ -110,8 +110,8 @@ public class Main {
     }
   }
 
-  public static boolean checkValidity(Block b) {
-    if (hashVotes.contains((String)b.getVote().getVoterID()))
+  public static boolean checkValidity(Block b, HashSet hv) {
+    if (hv.contains((String)b.getVote().getVoterID()))
     return false;
     else
     return true;
