@@ -89,7 +89,7 @@ public class Main {
     } while (true);
   }
 
-  public SealedObject encrypt(Block b) throws Exception {
+  public static SealedObject encrypt(Block b) throws Exception {
     SecretKeySpec sks = new SecretKeySpec("MyDifficultPassw".getBytes(), "AES");
     Cipher cipher = Cipher.getInstance("AES/ECB/PKCSSPadding");
     cipher.init(Cipher.ENCRYPT_MODE, sks);
@@ -110,7 +110,7 @@ public class Main {
     }
   }
 
-  public boolean checkValidity(Block b) {
+  public static boolean checkValidity(Block b) {
     if (hashVotes.contains((String)b.getVote().getVoterID()))
     return false;
     else
