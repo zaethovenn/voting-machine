@@ -1,5 +1,3 @@
-package src.blockchain;
-
 import java.io.Serializable;
 
 public class Block implements Serializable {
@@ -7,7 +5,7 @@ public class Block implements Serializable {
   /** Inner class to implement Voting mechanism.
   */
   public class Vote implements Serializable {
-    private String votedID;
+    private String voterID;
     private String voterName;
     private String voteParty;
 
@@ -16,7 +14,7 @@ public class Block implements Serializable {
     public Vote(String vi, String vn, String vp) {
       voterName = vn;
       voterID = vi;
-      voterParty = vp;
+      voteParty = vp;
     }
 
     /** Mutator method for setting voter ID.
