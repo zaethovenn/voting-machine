@@ -112,6 +112,6 @@ public class Block implements Serializable {
   */
   @Override
   public String toString() {
-    return "Voter ID: " + vote.voterID + "\nVoter Name: " + vote.voterName + "\Voted for Party: " + vote.voteParty;
+    return "Voter ID: " + vote.voterID + "\nVoter Name: " + vote.voterName + "\nVoted for Party: " + vote.voteParty;
   }
 }
