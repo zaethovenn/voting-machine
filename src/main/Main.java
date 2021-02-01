@@ -72,7 +72,7 @@ public class Main {
 
         System.out.println("Enter your vote: ");
         voteParty = sc.nextInt();
-        vote = new Block(prevHash, voterID, voterName, voteParty);
+        Block vote = new Block(prevHash, voterID, voterName, voteParty);
 
         if (checkValidity(vote)) {
           hashVotes.add(voterID);
