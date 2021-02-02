@@ -108,29 +108,6 @@ public class Main {
     } while (true);
   }
 
-  /*
-  public static SealedObject encrypt(Block b) throws Exception {
-    SecretKeySpec sks = new SecretKeySpec("MyDifficultPassw".getBytes(), "AES");
-    Cipher cipher = Cipher.getInstance("AES/ECB/PKCSSPadding");
-    cipher.init(Cipher.ENCRYPT_MODE, sks);
-
-    return new SealedObject(b, cipher);
-  }
-
-  public static Object decrypt(SealedObject so) throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
-    SecretKeySpec sks = new SecretKeySpec("MyDifficultPassw".getBytes(), "AES");
-    Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
-    cipher.init(Cipher.DECRYPT_MODE, sks);
-
-    try {
-      return so.getObject(cipher);
-    } catch (ClassNotFoundException | IllegalBlockSizeException | BadPaddingException e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
-  */
-
   public static boolean checkValidity(Block b, HashSet hv) {
     if (hv.contains((String)b.getVote().getVoterID()))
     return false;
