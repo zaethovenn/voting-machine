@@ -23,7 +23,6 @@ public class Main {
     System.out.println("\n**** MAIN MENU ****");
     System.out.println("1. Cast Votes");
     System.out.println("2. View Votes on Blockchain");
-    System.out.println("0. Exit Program");
 
     // 4 total options
     Scanner sc = new Scanner(System.in);
