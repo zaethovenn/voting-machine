@@ -1,18 +1,4 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
-
-import javax.crypto.*;
-import javax.crypto.spec.SecretKeySpec;
-
-import static java.lang.System.exit;
-import static java.lang.System.lineSeparator;
 
 /**
 * The Main class consists of framework that is intended to simulate voting using Blockchain.
