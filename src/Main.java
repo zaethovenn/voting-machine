@@ -57,8 +57,8 @@ public class Main {
       } else if (action == '1') {
         System.out.println("Welcome to the Voting Machine!");
         System.out.println("Enter voter ID: ");
-        voterID = sc.nextLine();
         sc.nextLine();
+        voterID = sc.nextLine();
         System.out.println("Enter voter name: ");
         voterName = sc.nextLine();
         System.out.println("**** Vote for Candidates ****");
@@ -75,8 +75,6 @@ public class Main {
           hashVotes.add(voterID);
           prevHash = vote.getBlockHash();
             blockList.add(vote);
-
-
         } else {
           System.out.println("Vote invalid!");
         }
