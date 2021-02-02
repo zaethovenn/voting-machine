@@ -41,9 +41,9 @@ public class Main {
 
     // Candidates ArrayList for potential candidates to vote for
     ArrayList<String> candidates = new ArrayList<>();
-    candidates.add("one");
-    candidates.add("two");
-    candidates.add("three");
+    candidates.add("Kanye West");
+    candidates.add("Sir Robert Burnetts");
+    candidates.add("Chiddy Bang");
 
     String voterID = "";
     String voterName = "";
