@@ -91,7 +91,17 @@ public class Main {
         System.out.println("Do you want to continue voting? (Y/N)");
         char answer = Character.toUpperCase(sc.next().charAt(0));
         if (answer == 'N') {
-          break;
+          // Display menu for user to view their options
+          System.out.println(" **** MAIN MENU ****");
+          System.out.println("1. Cast Votes");
+          System.out.println("2. View Votes on Blockchain");
+          System.out.println("0. Exit Program");
+          System.out.println("********************");
+          System.out.println("Please input your choice: ");
+          action = Character.toUpperCase(sc.next().charAt(0));
+          if (action == '0') {
+            break;
+          }
         }
       } else if (action == '2') {
         System.out.println("**** Displaying Votes ****");
