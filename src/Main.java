@@ -69,7 +69,7 @@ public class Main {
 
         System.out.println("Enter your vote: ");
         voteParty = sc.nextLine();
-        Block vote = new Block(prevHash, voterID, voterName, candidates.get(Integer.parseInt(voteParty)));
+        Block vote = new Block(prevHash, voterID, voterName, candidates.get(Integer.parseInt(voteParty)-1));
 
         if (checkValidity(vote, hashVotes)) {
           hashVotes.add(voterID);
