@@ -35,14 +35,9 @@ public class Main {
     char action = Character.toUpperCase(sc.next().charAt(0));
 
     HashSet<String> hashVotes = new HashSet<>();
-    ArrayList<SealedObject> blockList = new ArrayList<>();
+    ArrayList<Block> blockList = new ArrayList<>();
     Block genesisBlock = new Block(0, "", "", "");
-    try {
-    blockList.add(encrypt(genesisBlock));
-    }
-    catch(Exception e) {
-      System.out.println("error");
-    }
+    blockList.add(genesisBlock);
 
     // Candidates ArrayList for potential candidates to vote for
     ArrayList<String> candidates = new ArrayList<>();
@@ -79,11 +74,8 @@ public class Main {
         if (checkValidity(vote, hashVotes)) {
           hashVotes.add(voterID);
           prevHash = vote.getBlockHash();
-          try {
-            blockList.add(encrypt(vote));
-          } catch (Exception e) {
-            System.out.println("Exception error.");
-          }
+            blockList.add(vote);
+
 
         } else {
           System.out.println("Vote invalid!");
@@ -107,18 +99,7 @@ public class Main {
         System.out.println("**** Displaying Votes ****");
 
         for (int i = 1; i < blockList.size(); i++) {
-          try {
-            System.out.println(decrypt(blockList.get(i)));
-          } catch (IOException e) {
-            System.out.println("IOException error.");
-          } catch (NoSuchAlgorithmException a) {
-            System.out.println("NoSuchAlgorithmException error.");
-          } catch (NoSuchPaddingException p) {
-            System.out.println("NoSuchPaddingException error.");
-          }  catch (InvalidKeyException k) {
-            System.out.println("InvalidKeyException error.");
-          }
-
+            System.out.println(blockList.get(i));
         }
 
         System.out.println("**************************");
@@ -126,6 +107,7 @@ public class Main {
     } while (true);
   }
 
+  /*
   public static SealedObject encrypt(Block b) throws Exception {
     SecretKeySpec sks = new SecretKeySpec("MyDifficultPassw".getBytes(), "AES");
     Cipher cipher = Cipher.getInstance("AES/ECB/PKCSSPadding");
@@ -146,6 +128,7 @@ public class Main {
       return null;
     }
   }
+  */
 
   public static boolean checkValidity(Block b, HashSet hv) {
     if (hv.contains((String)b.getVote().getVoterID()))
