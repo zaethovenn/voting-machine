@@ -103,6 +103,7 @@ public class Main {
         }
 
         System.out.println("**************************");
+        break;
       }
     } while (true);
   }
