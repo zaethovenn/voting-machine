@@ -99,7 +99,7 @@ public class Main {
         System.out.println("**** Displaying Votes ****");
 
         for (int i = 1; i < blockList.size(); i++) {
-            System.out.println(blockList.get(i));
+            System.out.println(blockList.get(i).toString());
         }
 
         System.out.println("**************************");
