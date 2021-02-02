@@ -40,7 +40,7 @@ public class Main {
     try {
     blockList.add(encrypt(genesisBlock));
     }
-    catch(Exception e){
+    catch(Exception e) {
       System.out.println("error");
     }
 
@@ -87,6 +87,11 @@ public class Main {
 
         } else {
           System.out.println("Vote invalid!");
+        }
+        System.out.println("Do you want to continue voting? (Y/N)");
+        char answer = Character.toUpperCase(sc.next().charAt(0));
+        if (answer == 'N') {
+          break;
         }
       } else if (action == '2') {
         System.out.println("**** Displaying Votes ****");
