@@ -58,6 +58,7 @@ public class Main {
         System.out.println("Welcome to the Voting Machine!");
         System.out.println("Enter voter ID: ");
         voterID = sc.nextLine();
+        sc.nextLine();
         System.out.println("Enter voter name: ");
         voterName = sc.nextLine();
         System.out.println("**** Vote for Candidates ****");
