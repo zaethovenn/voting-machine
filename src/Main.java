@@ -37,7 +37,7 @@ public class Main {
     HashSet<String> hashVotes = new HashSet<>();
     ArrayList<SealedObject> blockList = new ArrayList<>();
     Block genesisBlock = new Block(0, "", "", "");
-    try{
+    try {
     blockList.add(encrypt(genesisBlock));
     }
     catch(Exception e){
@@ -63,6 +63,7 @@ public class Main {
         System.out.println("Welcome to the Voting Machine!");
         System.out.println("Enter voter ID: ");
         voterID = sc.nextLine();
+        sc.nextLine();
         System.out.println("Enter voter name: ");
         voterName = sc.nextLine();
         System.out.println("**** Vote for Candidates ****");
