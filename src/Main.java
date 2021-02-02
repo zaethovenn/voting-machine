@@ -100,8 +100,6 @@ public class Main {
             System.out.println(blockList.get(i).toString());
             System.out.println("**************************");
         }
-
-        System.out.println("**************************");
         break;
       }
     } while (true);
