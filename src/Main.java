@@ -20,7 +20,7 @@ import static java.lang.System.lineSeparator;
 public class Main {
   public static void main(String[] args) {
     // Display menu for user to view their options
-    System.out.println(" **** MAIN MENU ****");
+    System.out.println("\n**** MAIN MENU ****");
     System.out.println("1. Cast Votes");
     System.out.println("2. View Votes on Blockchain");
     System.out.println("0. Exit Program");
@@ -78,11 +78,11 @@ public class Main {
         } else {
           System.out.println("Vote invalid!");
         }
-        System.out.println("Do you want to continue voting? (Y/N)");
+        System.out.println("\nDo you want to continue voting? (Y/N)");
         char answer = Character.toUpperCase(sc.next().charAt(0));
         if (answer == 'N') {
           // Display menu for user to view their options
-          System.out.println(" **** MAIN MENU ****");
+          System.out.println("\n**** MAIN MENU ****");
           System.out.println("1. Cast Votes");
           System.out.println("2. View Votes on Blockchain");
           System.out.println("0. Exit Program");
@@ -94,15 +94,30 @@ public class Main {
           }
         }
       } else if (action == '2') {
-        System.out.println("**** Displaying Votes ****");
+        System.out.println("\n**** Displaying Votes ****\n");
 
         for (int i = 1; i < blockList.size(); i++) {
             System.out.println(blockList.get(i).toString());
-            System.out.println("**************************");
+            System.out.println("\n**************************\n");
         }
-        break;
+
+        System.out.println("\nDefaulting back to main menu...\n");
+
+        System.out.println("\n**** MAIN MENU ****");
+        System.out.println("1. Cast Votes");
+        System.out.println("2. View Votes on Blockchain");
+        System.out.println("0. Exit Program");
+        System.out.println("********************");
+        System.out.println("Please input your choice: ");
+        action = Character.toUpperCase(sc.next().charAt(0));
+        if (action == '0') {
+          break;
+        }
       }
     } while (true);
+
+    System.out.println("Thank you for using the Voting Machine!");
+
   }
 
   public static boolean checkValidity(Block b, HashSet hv) {
