@@ -30,7 +30,7 @@ public class Main {
     ArrayList<String> candidates = new ArrayList<>();
     // Add candidates to the candidates ArrayList
     candidates.add("Kanye West");
-    candidates.add("Sir Robert Burnetts");
+    candidates.add("Chompers");
     candidates.add("Chiddy Bang");
 
     // Initialize variables necessary as parameters for the Blockchain
