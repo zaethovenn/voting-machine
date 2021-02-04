@@ -126,19 +126,17 @@ public class Main {
       }
     } while (true); // Continously operate this do-while loop until user elects to quit
 
-    int c1Count, c2Count, c3Count;
+    int c1Count = 0, c2Count = 0, c3Count = 0;
 
     // Final counting of the votes
     System.out.println("**** Results of the Election ****");
     for (int i = 0; i < blockList.size(); i++) {
-      if (blockList.get(i).getVoteParty().equals(candidates.get(0))) {
+      if (blockList.get(i).getVote().getVoteParty().equals(candidates.get(0))) {
         c1Count++;
-      } else if (blockList.get(i).getVoteParty().equals(candidates.get(1))) {
+      } else if (blockList.get(i).getVote().getVoteParty().equals(candidates.get(1))) {
         c2Count++;
-      } else if (blockList.get(i).getVoteParty().equals(candidates.get(2))) {
+      } else if (blockList.get(i).getVote().getVoteParty().equals(candidates.get(2))) {
         c3Count++;
-      } else {
-        System.out.println("Genesis Block!");
       }
     }
 
@@ -153,7 +151,7 @@ public class Main {
       System.out.println(candidates.get(i) + ": " + count);
     }
 
-    String winner;
+    String winner = "";
 
     if (c1Count > c2Count && c1Count > c3Count) {
       winner = candidates.get(0);
