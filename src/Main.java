@@ -126,9 +126,53 @@ public class Main {
       }
     } while (true); // Continously operate this do-while loop until user elects to quit
 
+    int c1Count, c2Count, c3Count;
+
+    // Final counting of the votes
+    System.out.println("**** Results of the Election ****");
+    for (int i = 0; i < blockList.size(); i++) {
+      if (blockList.get(i).getVoteParty().equals(candidates.get(0))) {
+        c1Count++;
+      } else if (blockList.get(i).getVoteParty().equals(candidates.get(1))) {
+        c2Count++;
+      } else if (blockList.get(i).getVoteParty().equals(candidates.get(2))) {
+        c3Count++;
+      } else {
+        System.out.println("Genesis Block!");
+      }
+    }
+
+    for (int i = 0; i < candidates.size(); i++) {
+      int count = 0;
+      if (i == 0)
+        count = c1Count;
+      else if (i == 1)
+        count = c2Count;
+      else if (i == 2)
+        count = c3Count;
+      System.out.println(candidates.get(i) + ": " + count);
+    }
+
+    String winner;
+
+    if (c1Count > c2Count && c1Count > c3Count) {
+      winner = candidates.get(0);
+    } else if (c2Count > c1Count && c2Count > c3Count) {
+      winner = candidates.get(1);
+    } else if (c3Count > c1Count && c3Count > c2Count) {
+      winner = candidates.get(2);
+    } else if (c1Count == c2Count) {
+      winner = "tie";
+    } else if (c2Count == c3Count) {
+      winner = "tie";
+    } else if (c3Count == c1Count) {
+      winner = "tie";
+    }
+
+    System.out.println("The winner of the election is " + winner);
+
     // Thank user for using the Voting Machine
     System.out.println("Thank you for using the Voting Machine!");
-
   }
 
   /** checkValidity method evaluates if the voterID already exists within the HashSet.
