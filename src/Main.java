@@ -129,7 +129,7 @@ public class Main {
     int c1Count = 0, c2Count = 0, c3Count = 0;
 
     // Final counting of the votes
-    System.out.println("**** Results of the Election ****");
+    System.out.println("\n**** Results of the Election ****");
     for (int i = 0; i < blockList.size(); i++) {
       if (blockList.get(i).getVote().getVoteParty().equals(candidates.get(0))) {
         c1Count++;
@@ -151,6 +151,8 @@ public class Main {
       System.out.println(candidates.get(i) + ": " + count);
     }
 
+    System.out.println("*********************************\n");
+
     String winner = "";
 
     if (c1Count > c2Count && c1Count > c3Count) {
@@ -167,10 +169,14 @@ public class Main {
       winner = "tie";
     }
 
-    System.out.println("The winner of the election is " + winner);
+    if (winner.equals("tie")) {
+      System.out.println("There appears to be a tie! We must revote!");
+    } else {
+      System.out.println("The winner of the election is " + winner);
+    }
 
     // Thank user for using the Voting Machine
-    System.out.println("Thank you for using the Voting Machine!");
+    System.out.println("\nThank you for using the Voting Machine!");
   }
 
   /** checkValidity method evaluates if the voterID already exists within the HashSet.
