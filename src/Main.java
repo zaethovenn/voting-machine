@@ -6,10 +6,7 @@ import java.util.*;
 public class Main {
   public static void main(String[] args) {
     // Display menu for user to view their options
-    System.out.println("\n**** MAIN MENU ****");
-    System.out.println("1. Cast Votes");
-    System.out.println("2. View Votes on Blockchain");
-
+    menuDisplay();
     // Create scanner object to read user input from the terminal
     Scanner sc = new Scanner(System.in);
 
@@ -85,10 +82,7 @@ public class Main {
         // If answer is no, display main menu again
         if (answer == 'N') {
           // Display menu for user to view their options
-          System.out.println("\n**** MAIN MENU ****");
-          System.out.println("1. Cast Votes");
-          System.out.println("2. View Votes on Blockchain");
-          System.out.println("0. Exit Program");
+          menuDisplay();
           System.out.println("********************");
           System.out.println("Please input your choice: ");
           action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
@@ -111,11 +105,7 @@ public class Main {
 
         // Alert user that they are being defaulted back to the main menu
         System.out.println("\nDefaulting back to main menu...\n");
-
-        System.out.println("\n**** MAIN MENU ****");
-        System.out.println("1. Cast Votes");
-        System.out.println("2. View Votes on Blockchain");
-        System.out.println("0. Exit Program");
+        menuDisplay();
         System.out.println("********************");
         System.out.println("Please input your choice: ");
         action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
@@ -182,5 +172,14 @@ public class Main {
     return false;
     else
     return true;
+  }
+
+  /** Method for displaying interactive menu in order to avoid repeating code
+     */
+  static void menuDisplay(){
+    System.out.println("\n**** MAIN MENU ****");
+    System.out.println("1. Cast Votes");
+    System.out.println("2. View Votes on Blockchain");
+    System.out.println("0. Exit Program");
   }
 }
