@@ -161,11 +161,7 @@ public class Main {
       winner = candidates.get(1);
     } else if (c3Count > c1Count && c3Count > c2Count) {
       winner = candidates.get(2);
-    } else if (c1Count == c2Count) {
-      winner = "tie";
-    } else if (c2Count == c3Count) {
-      winner = "tie";
-    } else if (c3Count == c1Count) {
+    } else if (c1Count == c2Count || c2Count == c3Count || c3Count == c1Count) {
       winner = "tie";
     }
 
