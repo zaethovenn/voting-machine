@@ -6,7 +6,7 @@ import java.util.*;
 public class Main {
   public static void main(String[] args) {
     // Display menu for user to view their options
-    menuDisplay();
+    menuDisplay(true);
     // Create scanner object to read user input from the terminal
     Scanner sc = new Scanner(System.in);
 
@@ -82,7 +82,7 @@ public class Main {
         // If answer is no, display main menu again
         if (answer == 'N') {
           // Display menu for user to view their options
-          menuDisplay();
+          menuDisplay(false);
           System.out.println("********************");
           System.out.println("Please input your choice: ");
           action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
@@ -105,7 +105,7 @@ public class Main {
 
         // Alert user that they are being defaulted back to the main menu
         System.out.println("\nDefaulting back to main menu...\n");
-        menuDisplay();
+        menuDisplay(false);
         System.out.println("********************");
         System.out.println("Please input your choice: ");
         action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
@@ -158,7 +158,7 @@ public class Main {
     if (winner.equals("tie")) {
       System.out.println("There appears to be a tie! We must revote!");
     } else {
-      System.out.println("The winner of the election is " + winner);
+      System.out.println("The winner of the election is " + winner + "!");
     }
 
     // Thank user for using the Voting Machine
@@ -176,10 +176,17 @@ public class Main {
 
   /** Method for displaying interactive menu in order to avoid repeating code
      */
-  static void menuDisplay(){
-    System.out.println("\n**** MAIN MENU ****");
-    System.out.println("1. Cast Votes");
-    System.out.println("2. View Votes on Blockchain");
-    System.out.println("0. Exit Program");
+  public static void menuDisplay(boolean first){
+    if (first) {
+      System.out.println("\n**** MAIN MENU ****");
+      System.out.println("1. Cast Votes");
+      System.out.println("2. View Votes on Blockchain");
+    } else {
+      System.out.println("\n**** MAIN MENU ****");
+      System.out.println("1. Cast Votes");
+      System.out.println("2. View Votes on Blockchain");
+      System.out.println("0. Exit Program");
+    }
+
   }
 }
