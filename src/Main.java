@@ -14,6 +14,7 @@ public class Main {
     // Prompt user for input
     System.out.println("Please input your choice: ");
     char action = Character.toUpperCase(sc.next().charAt(0)); // Save input to variable action
+    System.out.println("");
 
     // Create HashSet to ensure there are no repeat votes according to VoterID
     HashSet<String> hashVotes = new HashSet<>();
