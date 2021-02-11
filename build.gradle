@@ -53,14 +53,14 @@ jar {
   manifest {
     attributes(
         'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-        'Main-Class': 'project-group_Kailani_Robert_Zack.Main'
+        'Main-Class': 'project-group_Kailani_Robert_Zack.src.Main'
         )
   }
 }
 
 // give the name of the application to run with "gradle run" command
 apply plugin: 'application'
-mainClassName = 'project-group_Kailani_Robert_Zack.Main'
+mainClassName = 'project-group_Kailani_Robert_Zack.src.Main'
 
 // perform checkstyle checking with the "gradle check" command
 apply plugin: 'checkstyle'
