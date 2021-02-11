@@ -9,11 +9,11 @@ public class Main {
     menuDisplay(true);
     // Create scanner object to read user input from the terminal
     Scanner sc = new Scanner(System.in);
-
-    System.out.println("********************"); // Asterisks for style
-    // Prompt user for input
-    System.out.println("Please input your choice: ");
     char action = Character.toUpperCase(sc.next().charAt(0)); // Save input to variable action
+    while (!validateChoice(action, true)) {
+      menuDisplay(true);
+      action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
+    }
     System.out.println("");
 
     // Create HashSet to ensure there are no repeat votes according to VoterID
@@ -84,9 +84,12 @@ public class Main {
         if (answer == 'N') {
           // Display menu for user to view their options
           menuDisplay(false);
-          System.out.println("********************");
-          System.out.println("Please input your choice: ");
           action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
+          while (!validateChoice(action, false)) {
+            menuDisplay(false);
+            action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
+          }
+
           // If action = 0, then quit the program
           if (action == '0') {
             break;
@@ -107,9 +110,12 @@ public class Main {
         // Alert user that they are being defaulted back to the main menu
         System.out.println("\nDefaulting back to main menu...\n");
         menuDisplay(false);
-        System.out.println("********************");
-        System.out.println("Please input your choice: ");
         action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
+        menuDisplay(false);
+        while (!validateChoice(action, false)) {
+          menuDisplay(false);
+          action = Character.toUpperCase(sc.next().charAt(0)); // Save action to action variable
+        }
         // If action = 0, then quit the program
         if (action == '0') {
           break;
@@ -188,6 +194,22 @@ public class Main {
       System.out.println("2. View Votes on Blockchain");
       System.out.println("0. Exit Program");
     }
+    System.out.println("********************");
+    System.out.println("Please input your choice: ");
+  }
 
+  public static boolean validateChoice(char c, boolean first) {
+    if (first) {
+      if (c != '1' && c != '2') {
+        System.out.println("\nInvalid input, please input one of the listed options! (1 or 2)");
+        return false;
+      }
+    } else {
+      if (c != '1' && c != '2' && c != '0') {
+        System.out.println("\nInvalid input, please input one of the listed options! (1, 2, or 0)");
+        return false;
+      }
+    }
+    return true;
   }
 }
