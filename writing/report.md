@@ -1,4 +1,4 @@
-# Report by Kai'lani Woodard, zackery devers
+# Report by Kai'lani Woodard, Zackery Devers, Robert McMaster
 
 ## Introduction and Motivation
 
@@ -45,6 +45,10 @@ This section should concentrate on how you conducted evaluation of your solution
 In our original implementation, we intended for each vote to be encrypted and then decrypted when displaying the votes on the blockchain. Unfortunately, in our merits to achieve this we had come up with failure each time. To our dismay, our solution to this problem was removing the function of encrypting and decrypting from the program completely as each attempt at implementation was non-functional.
 
 However, this fortunately paved the way for making programming much easier for the rest of the project.
+
+We also had challenges in trying to construct our test cases and implement gradle functionality into our program. Unfortunately, like the aforementioned issue, we were unable to solve this issue and had to revert to doing manual testing in order to demonstrate testing of our project.
+
+However, both of these challenges provided a valuable lesson in exploring alternative methods to get our project to work, in which we did.
 
 ## If worked in a team, description of the way in which you and your team members shared the project work
 
