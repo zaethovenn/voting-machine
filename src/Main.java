@@ -128,15 +128,19 @@ public class Main {
     // Final counting of the votes
     System.out.println("\n**** Results of the Election ****");
     for (int i = 0; i < blockList.size(); i++) {
+      // if vote is counted for Kanye West
       if (blockList.get(i).getVote().getVoteParty().equals(candidates.get(0))) {
-        c1Count++;
+        c1Count++; // increment Kanye West's vote count
+      // if vote is counted for Chompers
       } else if (blockList.get(i).getVote().getVoteParty().equals(candidates.get(1))) {
-        c2Count++;
+        c2Count++; // increment Chompers' vote count
+      // if vote is counted for Chiddy Bang
       } else if (blockList.get(i).getVote().getVoteParty().equals(candidates.get(2))) {
-        c3Count++;
+        c3Count++; // increment Chiddy Bang's vote count
       }
     }
 
+    // parse through the list of candidates and total the counts
     for (int i = 0; i < candidates.size(); i++) {
       int count = 0;
       if (i == 0)
@@ -148,23 +152,28 @@ public class Main {
       System.out.println(candidates.get(i) + ": " + count);
     }
 
-    System.out.println("*********************************\n");
+    System.out.println("*********************************\n"); // asterisks for pretty
 
-    String winner = "";
+    String winner = ""; // Initialize winner variable
 
+    // Series of if-else statements to determine the winner of the election
     if (c1Count > c2Count && c1Count > c3Count) {
       winner = candidates.get(0);
     } else if (c2Count > c1Count && c2Count > c3Count) {
       winner = candidates.get(1);
     } else if (c3Count > c1Count && c3Count > c2Count) {
       winner = candidates.get(2);
+    // Special case for ties within the election
     } else if (c1Count == c2Count || c2Count == c3Count || c3Count == c1Count) {
       winner = "tie";
     }
 
+    // If the winner equals a tie
     if (winner.equals("tie")) {
+      // Display message about the tie and call for a revote
       System.out.println("There appears to be a tie! We must revote!");
     } else {
+      // Display the winner of the election
       System.out.println("The winner of the election is " + winner + "!");
     }
 
@@ -198,6 +207,8 @@ public class Main {
     System.out.println("Please input your choice: ");
   }
 
+  /** Method to validate user choice inputs for the main menu.
+      */
   public static boolean validateChoice(char c, boolean first) {
     if (first) {
       if (c != '1' && c != '2') {
