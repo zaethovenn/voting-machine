@@ -11,13 +11,19 @@ Our concept for this project was to code a blockchain based voting machine. Feat
 
 This section should provide detailed description of your design. Please include a visual representation of the design of your project. This could include a technical diagram or a flowchart demonstrating how your concept works, a walk through a conceptual example, etc.
 
+![Program Flowchart](flowchart.png)
+
+To better explain the flowchart we have to break it down into its individual steps. The user starts by running the program via "java Main". You are then prompted with a menu requesting the users response of either 0, 1, or 2. If the user chooses 0 the program displays who won the election and ends the program. If they are to choose 1; they are prompted with their name, their voter id, and who they are going to vote for. After this step the program asks whether they want to continue voting. If yes the loop repeats itself, if no then the user is returned to the main menu. The final option they can choose is 2. If the user choses 2 the votes that have been casted already are displayed and the user is returned to the main menu.
+
 ## Implementation
 
 This section should describe implementation details of your project (how you implemented your solution). Please describe which languages, libraries, external tools you used. This section should also provide commands (in code blocks) that are needed to run your implementation and what is needed to be installed beforehand.
 
 We decided to program our project in Java because we all have a good familiarity with the language and also because of its object-oriented nature. Our program is fairly simple, therefore we felt that in order to create the best program possible that using a language that we are all familiar with was the best and most efficient method of achieving the project.
 
+In order to implement our solution, we first constructed the Block class which also has the Vote class nested inside of the Block class. Both of these classes import Serializable in order to give the ability for objects to be represented as a sequence of bytes including the object’s data as well as information regarding its type and types of data stored in the object. The Vote class has a series of accessor and mutator methods to modify and access each element of a vote, that being `voterName`, `voterID`, and `voteParty` while the Block class takes each of these elements and collates them into a vote accompanied with a previous hash or in this case `previousHash`. The Block class then has methods to access and modify the `previousHash` and `blockHash`, along with the method `toString()` which is used to display output of the blockchain data to the terminal.
 
+Next, we constructed the Main class to bear the majority of the code that gets out program to function. The Main class begins by asking the user for input to decide which action they would like to take. The beginning menu only has two options, which are casting votes or viewing the votes on the blockchain. From there, the program creates several data structures with different purposes; `hashVotes` is a HashSet that contains each voter ID to ensure there are no repeated votes, `blockList` is an ArrayList that contains each of the blocks, which in this case are the votes. From there, we add the first block to the program, the Genesis Block, mainly to pay homage to the first Bitcoin ever mined. From there, we created an ArrayList named `candidates` to store each of the candidate names in and add each of those to the ArrayList. We then provide options through a series of if statements where the user can either: cast a vote, view votes on the blockchain, or exit the program. At the program's conclusion, the results of the election are displayed and the program thanks the user for using our program. The Main class also contains the methods `checkValidity(Block b, HashSet hv)` and `menuDisplay(boolean first)` to check the validity of a vote and display the menu that the user sees because that occurs several times throughout the program.
 
 Regarding importing external libraries, we had to import Java packages in order for our program to function correctly. The two packages we imported were java.util.* and  java.io.Serializable. We chose to install all of the components of the java.util package because of our use with several of the interfaces within it, including ArrayList, HashSet, and Scanner.
 
@@ -42,7 +48,7 @@ However, this fortunately paved the way for making programming much easier for t
 
 ## If worked in a team, description of the way in which you and your team members shared the project work
 
-Zackery Devers- for my portion of the project I focused more on the presentation rather then the coding due to the time difference. My partners got a lot of the base coding done while they had the allotted time to do so in class so they left minor problems and bugs to fix if they couldn't figure out the solution to them. We really focused on making sure everyone was involved with the allotted problem occurring from time zone difference.
+Zackery Devers- for my portion of the project I focused more on the presentation rather then the coding due to the time difference. My partners got a lot of the base coding done while they had the allotted time to do so in class so they left minor problems and bugs to fix if they couldn't figure out the solution to them. We really focused on making sure everyone was involved with the allotted problem occurring from time zone difference. I also managed what was on the final report for our group.
 
 Robert McMaster-
 
