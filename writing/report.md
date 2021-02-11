@@ -11,7 +11,7 @@ Our concept for this project was to code a blockchain based voting machine. Feat
 
 This section should provide detailed description of your design. Please include a visual representation of the design of your project. This could include a technical diagram or a flowchart demonstrating how your concept works, a walk through a conceptual example, etc.
 
-![Program Flowchart](flowchart.png)
+![Program Flowchart](flowchart.PNG)
 
 To better explain the flowchart we have to break it down into its individual steps. The user starts by running the program via "java Main". You are then prompted with a menu requesting the users response of either 0, 1, or 2. If the user chooses 0 the program displays who won the election and ends the program. If they are to choose 1; they are prompted with their name, their voter id, and who they are going to vote for. After this step the program asks whether they want to continue voting. If yes the loop repeats itself, if no then the user is returned to the main menu. The final option they can choose is 2. If the user choses 2 the votes that have been casted already are displayed and the user is returned to the main menu.
 
@@ -50,10 +50,6 @@ However, this fortunately paved the way for making programming much easier for t
 
 Zackery Devers- for my portion of the project I focused more on the presentation rather then the coding due to the time difference. My partners got a lot of the base coding done while they had the allotted time to do so in class so they left minor problems and bugs to fix if they couldn't figure out the solution to them. We really focused on making sure everyone was involved with the allotted problem occurring from time zone difference. I also managed what was on the final report for our group.
 
-Robert McMaster- Over the course of this project I primarily worked on the design and debugging of Main.java. I also helped design the user interface of the program, specifically
-the main menu. While working on this portion, my goal was to make it as user friendly as possible, which I believe I achieved. There were various bugs that came up, one being
-an issue with the voter name not being saved to the blockchain. After doing some research I was able to figure out why this was happening and I fixed the issue. The sections that I
-did implement I did so through Telletype, which was the software that allowed us to all work on code at the same time. I was also involved in the
-creation and presentation of the slides that were used at various times over the course of this project.
+Robert McMaster- Over the course of this project I primarily worked on the design and debugging of Main.java. I also helped design the user interface of the program, specifically the main menu. While working on this portion, my goal was to make it as user friendly as possible, which I believe I achieved. There were various bugs that came up, one being an issue with the voter name not being saved to the blockchain. After doing some research I was able to figure out why this was happening and I fixed the issue. The sections that I did implement I did so through Teletype, which was the software that allowed us to all work on code at the same time. I was also involved in the creation and presentation of the slides that were used at various times over the course of this project.
 
 Kai'lani Woodard-om
